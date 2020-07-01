@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.bxbz.caffee.mapper.FoodMapper">
+    <resultMap id="BaseResultMap" type="team.bxbz.caffee.entity.Food">
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="amount" property="amount" jdbcType="INTEGER"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+    </resultMap>
+    <delete id="deleteByName" parameterType="java.lang.String">
+    delete from food
+    where name = #{name,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="team.bxbz.caffee.entity.Food">
+    insert into food (name, type, amount, price)
+    values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR},
+      #{amount,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL})
+    </insert>
+    <update id="updateByName" parameterType="team.bxbz.caffee.entity.Food">
+    update food
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL}
+    where name = #{name,jdbcType=VARCHAR}
+    </update>
+    <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select name, type, amount, price
+    from food
+    where name = #{name,jdbcType=VARCHAR}
+    </select>
+</mapper>

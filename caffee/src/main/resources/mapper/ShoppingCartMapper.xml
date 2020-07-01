@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.bxbz.caffee.mapper.ShoppingCartMapper">
+    <resultMap id="BaseResultMap" type="team.bxbz.caffee.entity.ShoppingCart">
+        <result column="cart_ID" property="cart_id" jdbcType="VARCHAR" />
+        <result column="user_ID" property="user_id" jdbcType="VARCHAR" />
+        <result column="food_name" property="food_name" jdbcType="VARCHAR" />
+        <result column="food_amount" property="food_amount" jdbcType="INTEGER" />
+        <result column="food_price" property="food_price" jdbcType="DECIMAL" />
+        <result column="total_price" property="total_price" jdbcType="DECIMAL" />
+    </resultMap>
+    <delete id="deleteByCartID" parameterType="java.lang.String">
+    delete from shopping_cart
+    where cart_ID = #{cart_id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="team.bxbz.caffee.entity.ShoppingCart">
+    insert into shopping_cart (cart_ID, user_ID, food_name, food_amount, food_price, total_price)
+    values (#{cart_id,jdbcType=VARCHAR}, #{user_id,jdbcType=VARCHAR},
+      #{food_name,jdbcType=VARCHAR}, #{food_amount,jdbcType=INTEGER},
+      #{food_price,jdbcType=DECIMAL}, #{total_price,jdbcType=DECIMAL})
+    </insert>
+    <update id="updateByCartID" parameterType="team.bxbz.caffee.entity.ShoppingCart">
+    update shopping_cart
+    set cart_ID = #{cart_id,jdbcType=VARCHAR},
+      user_ID = #{user_id,jdbcType=VARCHAR},
+      food_name = #{food_name,jdbcType=VARCHAR},
+      food_price = #{food_price,jdbcType=DECIMAL},
+      food_amount = #{food_amount,jdbcType=INTEGER},
+      total_price = #{total_price,jdbcType=DECIMAL}
+    where cart_ID = #{cart_id,jdbcType=VARCHAR}
+    </update>
+    <select id="selectByCartID" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select cart_ID, user_ID, food_name, food_amount, food_price, total_price
+    from shopping_cart
+    where cart_ID = #{cart_id,jdbcType=VARCHAR}
+    </select>
+    <select id="selectByUserID" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select cart_ID, user_ID, food_name, food_amount, food_price, total_price
+    from shopping_cart
+    where user_ID = #{user_id,jdbcType=VARCHAR}
+  </select>
+</mapper>
