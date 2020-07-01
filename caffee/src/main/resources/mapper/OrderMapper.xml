@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.bxbz.caffee.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="team.bxbz.caffee.entity.Order">
+        <result column="order_ID" property="order_id" jdbcType="VARCHAR" />
+        <result column="user_ID" property="user_id" jdbcType="VARCHAR" />
+        <result column="food_name" property="food_name" jdbcType="VARCHAR" />
+        <result column="food_price" property="food_price" jdbcType="DECIMAL" />
+        <result column="food_amount" property="food_amount" jdbcType="INTEGER" />
+        <result column="total_price" property="total_price" jdbcType="DECIMAL" />
+    </resultMap>
+    <delete id="deleteByOrderID" parameterType="java.lang.String">
+    delete from orders
+    where order_ID = #{order_id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="team.bxbz.caffee.entity.Order">
+    insert into orders (order_ID, user_ID, food_name, food_price,food_amount,total_price)
+    values (#{order_id,jdbcType=VARCHAR}, #{user_id,jdbcType=VARCHAR},
+      #{food_name,jdbcType=VARCHAR}, #{food_price,jdbcType=DECIMAL},
+      #{food_amount,jdbcType=INTEGER}, #{total_price,jdbcType=DECIMAL})
+    </insert>
+    <update id="updateByOrderID" parameterType="team.bxbz.caffee.entity.Order">
+    update orders
+    set order_ID = #{order_id,jdbcType=VARCHAR},
+      user_ID = #{user_id,jdbcType=VARCHAR},
+      food_name = #{food_name,jdbcType=VARCHAR},
+      food_price = #{food_price,jdbcType=DECIMAL},
+      food_amount = #{food_amount,jdbcType=INTEGER},
+      total_price = #{total_price,jdbcType=DECIMAL}
+    where order_ID = #{order_id,jdbcType=VARCHAR}
+    </update>
+    <select id="selectByOrderID" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select order_ID, user_ID, food_name, food_price, food_amount, total_price
+    from orders
+    where order_ID = #{order_id,jdbcType=VARCHAR}
+    </select>
+    <select id="selectByUserID" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select order_ID, user_ID, food_name, food_price, food_amount, total_price
+    from orders
+    where user_ID = #{user_id,jdbcType=VARCHAR}
+  </select>
+</mapper>
