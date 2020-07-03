@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<table border="1" width="1000">
+    <thead>
+    <tr>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>电话</td>
+        <td>邮箱</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${users}">
+        <td th:text="${item.userID}"></td>
+        <td th:text="${item.password}"></td>
+        <td th:text="${item.userTele}"></td>
+        <td th:text="${item.userEmail}"></td>
+    </tr>
+</table>
+<form action="/deleteUser" method="GET">
+    <div>
+        <br>
+        删除：<br>
+        <input type="text" name="userID" placeholder="请输入要删除的用户名"><br>
+        <input type="submit" value="删除"><br><br>
+    </div>
+</form>
+<form action="/addUser" method="GET">
+    <div>
+        增加：<br>
+        <input type="text" name="userID" placeholder="请输入要增加的用户名"><br>
+        <input type="text" name="password" placeholder="请设置密码"><br>
+        <input type="text" name="tele" placeholder="请输入电话"><br>
+        <input type="text" name="email" placeholder="请输入邮箱"><br>
+        <input type="submit" value="增加"><br>
+    </div>
+</form>
+<form action="/changeUser" method="GET">
+    <div>
+        <br>修改：<br>
+        <input type="text" name="userID" placeholder="请输入要修改的用户名"><br>
+        <input type="text" name="password" placeholder="请修改后密码密码"><br>
+        <input type="text" name="tele" placeholder="请输入修改后电话"><br>
+        <input type="text" name="email" placeholder="请输入修改后邮箱"><br>
+        <input type="submit" value="修改"><br>
+    </div>
+</form>
+</body>
+</html>
+</html>

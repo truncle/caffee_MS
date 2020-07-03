@@ -33,7 +33,23 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+dependencies {
+    compile 'jstl:jstl:1.2'
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
 
+dependencies {
+    compile(
+            'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.springframework.boot:spring-boot-devtools',
+            'mysql:mysql-connector-java'
+    )
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
 test {
     useJUnitPlatform()
 }

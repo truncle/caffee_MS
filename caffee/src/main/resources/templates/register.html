@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="register" align="center" >
+    <h2 >注册新账号</h2>
+    <form action="/register" method="GET">
+        <!--提示信息-->
+        <p style="color: red" th:text="${msg1}" th:if="${not #strings.isEmpty(msg1)}"></p>
+        <p style="color: red" th:text="${msg2}" th:if="${not #strings.isEmpty(msg2)}"></p>
+            <input type="text" name="userID" placeholder="用户名"><br>
+            <input type="text" name="password" placeholder="密码"><br>
+            <input type="text" name="tele" placeholder="电话"><br>
+            <input type="text" name="email" placeholder="邮箱"><br>
+        <input type="submit" value="注册">
+    </form>
+</div>
+</body>
+</html>

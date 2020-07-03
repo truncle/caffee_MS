@@ -5,30 +5,21 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
-<div class="add">
-    <h2>注册新账号</h2>
-    <form action="/add" method="GET">
-        <!--提示信息-->
-        <p style="color: red" th:text="${msg1}" th:if="${not #strings.isEmpty(msg1)}"></p>
-        <p style="color: red" th:text="${msg2}" th:if="${not #strings.isEmpty(msg2)}"></p>
-        用户名: <input type="text" name="userID"><br>
-        密码:<input type="text" name="password"><br>
-        电话：<input type="text" name="tele"><br>
-        邮箱:<input type="text" name="email"><br>
-        <input type="submit" value="注册">
-    </form>
-</div>
-<div class="login">
-    <h2>登陆已有账号</h2>
+<div class="login" align="center">
+    <h2 align="center">欢迎使用咖啡厅点餐系统！</h2>
     <form action="/login" method="GET">
+        <div align="center">
         <!--提示信息-->
         <p style="color: red" th:text="${msg3}" th:if="${not #strings.isEmpty(msg3)}"></p>
         <p style="color: red" th:text="${msg4}" th:if="${not #strings.isEmpty(msg4)}"></p>
         <p style="color: red" th:text="${msg5}" th:if="${not #strings.isEmpty(msg5)}"></p>
-        用户名:<input type="text" name="userID"><br>
-        密码:<input type="text" name="password"><br>
-        <input type="submit" value="登陆">
+            <input type="text" name="userID" placeholder="用户名"><br>
+            <input type="text" name="password" placeholder="密码"><br>
+        <input type="submit" value="登陆"><br>
+        </div>
+    </form>
+    <form action="/add" method="GET">
+    <input type="submit" value="注册">
     </form>
 </div>
 </body>
