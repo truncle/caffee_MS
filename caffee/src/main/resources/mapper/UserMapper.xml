@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="team.bxbz.caffee.mapper.UserMapper" >
-    <resultMap id="BaseResultMap" type="team.bxbz.caffee.entity.User" >
-        <result column="user_ID" property="userID" jdbcType="VARCHAR" />
-        <result column="user_password" property="password" jdbcType="VARCHAR" />
-        <result column="user_tele" property="userTele" jdbcType="VARCHAR" />
-        <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+<mapper namespace="team.bxbz.caffee.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="team.bxbz.caffee.entity.User">
+        <result column="user_ID" property="userID" jdbcType="VARCHAR"/>
+        <result column="user_password" property="password" jdbcType="VARCHAR"/>
+        <result column="user_tele" property="userTele" jdbcType="VARCHAR"/>
+        <result column="user_email" property="userEmail" jdbcType="VARCHAR"/>
     </resultMap>
-    <delete id="deleteByUserID" parameterType="java.lang.String" >
+    <delete id="deleteByUserID" parameterType="java.lang.String">
     delete from user
     where user_ID = #{userID,jdbcType=VARCHAR}
   </delete>
-    <insert id="insert" parameterType="team.bxbz.caffee.entity.User" >
+    <insert id="insert" parameterType="team.bxbz.caffee.entity.User">
     insert into user (user_ID, user_password, user_tele, user_email)
     values (#{userID,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{userTele,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR})
   </insert>
-    <update id="updateByUserID" parameterType="team.bxbz.caffee.entity.User" >
+    <update id="updateByUserID" parameterType="team.bxbz.caffee.entity.User">
     update user
     set user_ID = #{userID,jdbcType=VARCHAR},
       user_password = #{password,jdbcType=VARCHAR},
@@ -24,9 +24,12 @@
       user_email = #{userEmail,jdbcType=VARCHAR}
     where user_ID = #{userID,jdbcType=VARCHAR}
   </update>
-    <select id="selectByUserID" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    <select id="selectByUserID" resultMap="BaseResultMap" parameterType="java.lang.String">
     select user_ID, user_password, user_tele, user_email
     from user
     where user_ID = #{userID,jdbcType=VARCHAR}
   </select>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from user;
+    </select>
 </mapper>
