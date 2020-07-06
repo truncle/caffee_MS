@@ -9,7 +9,34 @@
     <meta name="applicable-device" content="pc">
     <title>咖啡厅点餐系统</title>
 <style>
-    
+.aside{
+                 
+        background-color:rgba(244,251,251,0.47);
+        border: 1px   solid  #FFFFFF;
+         width: 200px;
+        text-align: center;
+        color: #FFFFFF;
+        }
+              
+     .aside div{
+        height: 30px;
+        border-bottom: 1px   solid   #FFFFFF;
+        line-height: 55px;
+        }
+        .aside  div  font{
+         font-weight: 800;
+        }
+        .aside  div  span{
+         font-weight: 800;
+        margin-left:18px;
+     }
+               
+       #header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
     a:link,a:visited
     {
         display: block;
@@ -36,26 +63,34 @@
     }
     </style>
     </head>
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/1.icon">
-    <link rel="icon" href="/1.icon" size="16x16 32x32"><!--这是网页logo-->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="1.icon">
+    <link rel="icon" href="1.icon" size="16x16 32x32"><!--这是网页logo-->
 </head>
-<body background="/背景.jpg">
-    
+<body background="背景.jpg" style="width: 1280px;">
   <!--<audio src="/Leslie Howard _ Franz Liszt - Symphony No. 5 in C Minor, S. 464 _ 5 - I. Allegro con brio (C小调第5号交响曲，作品464之5 - 第一乐章 有活力的快板) (second version).mp3" autoplay></audio> --> 
   <div stytle="text-align:center;">
     <div style="position: relative">
-    <img src="/修饰背景.jpg" background-repeat:no-repeat width="1200" height="500" >
+    <img src="修饰背景.jpg" background-repeat:no-repeat width="1200" height="500" >
     <div style="position:absolute; z-index:2; left:10px; top:10px">
-        <table style="margin-left: auto;">
+        <table style="margin-right: auto;position: absolute; width: 100px;;">
             <tr>
                 <td>
-                   <a href="/咖啡厅点餐系统.html" style="background-color: unset;">首页</a>
+                    <div class="aside">
+                    <font>
+                    <a href="咖啡厅点餐系统.html" style="background-color: unset;" >首页</a>
+                    </font>
+                </div>
                 </td>
                 <td>
-                <a href="/login.html" style="background-color: unset;">登录</a>
-                 </td>
+                    <div class="aside">
+                        <font>
+                <a href="login.html" style="background-color: unset;">登录</a>
+            </font>
+             </div>
+            </td>
            </tr>
         </table>
+    <br \>
     <h1 style="background-color:rgb(231, 231, 231);">欢迎访问点餐系统</h1>
     <p style="background-color:rgb(231, 231, 231);">我心里藏着的秘密，在每一天的清晨，暖成咖啡，送给你</p>
     </div>
@@ -64,7 +99,7 @@
     <!--在这里可以添加新的内容-->
     
 <!---test --->
-<img src="/修饰.jpg" alt="抱歉！网页出错了！！！" width="1280px">
+<img src="修饰.jpg" alt="抱歉！网页出错了！！！" width="1280px">
 <table style="margin: auto;">
     <tr>
         <th>
@@ -97,7 +132,7 @@
             <br \>
             <br \>
             <br \>
-        <a target="_blank" href="/历史订单.html" style="text-decoration: none; background-color:rgb(230, 68, 68) ;">
+        <a target="_blank" href="历史订单.html" style="text-decoration: none; background-color:rgb(230, 68, 68) ;">
               
               <p class="line2" style="color: white; text-align: center; font-size: 30px;">查看历史订单</p>
         </a>
@@ -106,7 +141,7 @@
             <br \>
             <br \>
             <br \>
-            <a href="/管理员界面.html" target="_blank" style="text-decoration: none; background-color:rgb(255, 251, 8) ;">
+            <a href="管理员界面.html" target="_blank" style="text-decoration: none; background-color:rgb(255, 251, 8) ;">
             
             <p class="line2" style="color: white; text-align: center; font-size: 30px;">我是管理员</p>
               
@@ -124,7 +159,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">意式浓啡</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/意式浓啡1.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="意式浓啡1.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -133,13 +168,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">水果蛋糕</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/水果蛋糕.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="水果蛋糕.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -148,7 +183,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -156,7 +191,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">美式咖啡</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/美式咖啡.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="美式咖啡.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -165,13 +200,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">奶油蛋糕</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/奶油.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="奶油.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -180,7 +215,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -188,7 +223,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">猫屎咖啡</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/猫屎.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="猫屎.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -197,13 +232,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">黑森林蛋糕</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/黑森林.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="黑森林.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -212,7 +247,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -220,7 +255,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">美式黑咖</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/美式黑啡.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="美式黑啡.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -229,13 +264,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">抹茶蛋糕</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/抹茶黄桃.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="抹茶黄桃.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -244,7 +279,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -252,7 +287,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">拿铁咖啡</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/拿铁咖啡.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="拿铁咖啡.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -261,13 +296,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">铜锣烧</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/铜锣烧.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="铜锣烧.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -276,7 +311,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -284,7 +319,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">卡布奇诺</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/卡布奇诺咖啡.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="卡布奇诺咖啡.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -293,13 +328,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">麻麻鸡</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/麻麻鸡.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="麻麻鸡.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -308,7 +343,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -316,7 +351,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">百香绿茶</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/百香绿茶.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="百香绿茶.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -325,13 +360,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">鸡蛋仔</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/鸡蛋仔.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="鸡蛋仔.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -340,7 +375,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -348,7 +383,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">焦糖奶茶</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/焦糖玛奇朵.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="焦糖玛奇朵.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -357,13 +392,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">缤纷果汁</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/缤纷果汁.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="缤纷果汁.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -372,7 +407,7 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
             </td>
     </tr>
     <tr>
@@ -380,7 +415,7 @@
         <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">茉香奶茶</p></a> 
         </td>
         <td  style="text-align: left;">
-           <a id="C1"><img src="/茉香奶绿.jpg" width="150px" height="150px"></a>
+           <a id="C1"><img src="茉香奶绿.jpg" width="150px" height="150px"></a>
         </td>
         <td>
 <pre style="font-size: 20px;">
@@ -389,13 +424,13 @@
         </pre>
         </td>
         <td>
-        <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
+        <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>                                                                                                                                                                                                                                         
         </td>
         <td style="width:80px;vertical-align:top;">
             <a href="#C1"  style="text-decoration:none; width: 200px;"><p style="color: black; font-size: larger; text-align: center;">冰激凌</p></a> 
             </td>
             <td  style="text-align: left;">
-               <a id="C1"><img src="/冰激凌.jpg" width="150px" height="150px"></a>
+               <a id="C1"><img src="冰激凌.jpg" width="150px" height="150px"></a>
             </td>
             <td>
     <pre style="font-size: 20px;">
@@ -404,26 +439,12 @@
             </pre>
             </td>
             <td>
-            <button type="button" onclick="alert('加入成功')"><img src="/加号.jpg" width="10px" height="10px"></button>
+            <button type="button" onclick="alert('加入成功')"><img src="加号.jpg" width="10px" height="10px"></button>
             </td>
     </tr>
     <tr>
-       <a href="/购物车.html" style="width: 100px;"><button type="button"><img src="/购物车.jpg" width="80px" height="80px"></button></a>
+       <a href="购物车.html" style="width: 100px;"><button type="button"><img src="购物车.jpg" width="80px" height="80px"></button></a>
     </tr>
-</table>
-
-<table style="margin: auto;">
-    <tr>
-        <td>
-            <a target="_blank" href="/help/faq" style="width: 80px; color:black;" >常见问题</a>
-        </td>
-        <td>
-                      <a target="_blank" href="/help/feedback" style="width: 80px; color:black">用户反馈</a>
-        </td>          
-        <td>
-                      <a target="_blank" href="/help/inform" style="width: 80px;color:black">诚信举报</a>
-        </td>
-    </tr>              
 </table>  
 </body>
 </html>

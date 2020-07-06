@@ -68,50 +68,30 @@ table.gridtable td {
     </style>
     </head>
     <body>
-<h2>> 库存管理</h2>
+<h2>> 用户管理 >更改用户信息|增加用户</h2>
 <table class="gridtable" style="width: 950px;">
-    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">库存情况显示</caption>
+    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">用户管理设置</caption>
     <tr>
         <th>用户名</th>
         <th>密码</th>
+        <th>联系方式</th>
         <th>邮箱</th>
         <th>操作状态</th>
-        <th>新增用户</th>
     </tr>
     <tr>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td style="margin: auto;"><button type="button" onclick="alert('更改成功')" style="background-color: red; width: 80; height: 10; text-align: center;">更改信息</button></td>
-        <td><button type="button" onclick="alert('增加成功')" style="background-color: red; width: 80; height: 10; text-align: center;">新增用户</button></td>
+        
+        <td><input type="text" name="userID" placeholder="请输入要修改的用户名"></td>
+        <td><input type="text" name="password" placeholder="请修改后密码密码"></td>
+        <td><input type="text" name="tele" placeholder="请输入修改后电话"></td>
+        <td><input type="text" name="email" placeholder="请输入修改后邮箱"></td>
+        <td><button type="button" onclick="alert('修改成功')" style="background-color: red; width: 80; height: 10; text-align: center;">修改</button></td>
     </tr>
     <tr>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><button type="button" onclick="alert('更改成功')" style="background-color: red; width: 80; height: 10; text-align: center;">更改信息</button></td>
-        <td><button type="button" onclick="alert('增加成功')" style="background-color: red; width: 80; height: 10; text-align: center;">新增用户</button></td>
-    </tr>
-    <tr>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><button type="button" onclick="alert('更改成功')" style="background-color: red; width: 80; height: 10; text-align: center;">更改信息</button></td>
-        <td><button type="button" onclick="alert('增加成功')" style="background-color: red; width: 80; height: 10; text-align: center;">新增用户</button></td>
-    </tr>
-    <tr>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><button type="button" onclick="alert('更改成功')" style="background-color: red; width: 80; height: 10; text-align: center;">更改信息</button></td>
-        <td><button type="button" onclick="alert('增加成功')" style="background-color: red; width: 80; height: 10; text-align: center;">新增用户</button></td>
-    </tr>
-    <tr>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><button type="button" onclick="alert('更改成功')" style="background-color: red; width: 80; height: 10; text-align: center;">更改信息</button></td>
-        <td><button type="button" onclick="alert('增加成功')" style="background-color: red; width: 80; height: 10; text-align: center;">新增用户</button></td>
+        <td><input type="text" name="userID" placeholder="请输入要增加的用户名"></td>
+        <td> <input type="text" name="password" placeholder="请设置密码"></td>
+        <td><input type="text" name="tele" placeholder="请输入电话"></td>
+        <td><input type="text" name="email" placeholder="请输入邮箱"></td>
+       <td><button type="button" onclick="alert('增加成功')" style="background-color: red; width: 80; height: 10; text-align: center;">增加</button></td>
     </tr>
 </table>
 </body>
