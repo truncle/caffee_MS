@@ -29,6 +29,11 @@
     from food
     where name = #{name,jdbcType=VARCHAR}
     </select>
+    <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select name, type, amount, price
+    from food
+    where type = #{type ,jdbcType=VARCHAR}
+    </select>
     <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
         select * from food;
     </select>

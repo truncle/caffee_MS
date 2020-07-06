@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>",
+      "type": "java.lang.String",
+      "description": "Description for <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>."
+  }
+] }

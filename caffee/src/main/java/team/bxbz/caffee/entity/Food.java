@@ -10,7 +10,9 @@ public class Food {
     private Double price;//餐点单价
 
     //构造函数
-    public Food() { }
+    public Food() {
+    }
+
     public Food(String name, String type, int amount, double price) {
         this.name = name;
         this.type = type;
@@ -19,19 +21,41 @@ public class Food {
     }
 
     //get方法
-    public String getName() { return name; }
-    public String getType() { return type; }
-    public int getAmount() { return amount; }
-    public double getPrice() { return price; }
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 
     //set方法
-    public void setName(String name) { this.name = name; }
-    public void setAmount(Integer amount) { this.amount = amount; }
-    public void setPrice(Double price) { this.price = price; }
-    public void setType(String type) { this.type = type; }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     //toString
-    public String toString(){
-        return "name:"+name+"\namount:"+amount+"\nprice:"+price+"\ntype:"+type;
+    public String toString() {
+        return "name:" + name + "\namount:" + amount + "\nprice:" + price + "\ntype:" + type;
     }
 }

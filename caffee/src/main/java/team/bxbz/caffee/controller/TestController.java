@@ -20,8 +20,8 @@ public class TestController {
     @RequestMapping("/helloworld")
     public void sayHW() {
         //测试用
-        String s=userService.getUser("110");
-        List<User> a=userMapper.selectAll();
+        String s = userService.getUser("110");
+        List<User> a = userMapper.selectAll();
         System.out.println(a.toString());
         //String s=userService.getAdmin("xin");
         //String s=userService.getFood("xin");

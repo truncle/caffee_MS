@@ -8,10 +8,13 @@ import team.bxbz.caffee.entity.Administrator;
 public interface AdminMapper {
     //删除管理员
     int deleteByAdminID(String ad_ID);
+
     //插入管理员
     int insert(Administrator record);
+
     //查询管理员
     Administrator selectByAdminID(String ad_ID);
+
     //更新用户信息
     int updateByAdminID(Administrator record);
 }

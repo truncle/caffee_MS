@@ -1,11 +1,12 @@
 package team.bxbz.caffee.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import team.bxbz.caffee.entity.User;
 import team.bxbz.caffee.mapper.UserMapper;
 
@@ -25,17 +26,31 @@ public class UserController {
         return "listUser";
     }
 
-    @GetMapping(path = "deleteUser")
+    @RequestMapping(path = "deleteUser", method = RequestMethod.GET)
     public String deleteUser(@RequestParam String userID) {
         userMapper.deleteByUserID(userID);
         return "redirect:http://localhost:8080/usercontroller";
+    }
+
+    @RequestMapping(path = "searchUser", method = RequestMethod.GET)
+    public ModelAndView getIndex(@RequestParam("id") String id) {
+        ModelAndView av = new ModelAndView("listUser");
+        if (userMapper.selectByUserID(id) != null) {
+            av.addObject("users", userMapper.selectByUserID(id));
+        } else {
+            av.addObject("users", null);
+        }
+        av.addObject("keyValue", id);
+        return av;
     }
 
     @GetMapping(path = "addUser")
     public String addNewUser(@RequestParam String userID, @RequestParam String password,
                              @RequestParam String tele, @RequestParam String email,
                              Map<String, Object> map) {
-        userMapper.insert(new User(userID, password, tele, email));
+        if (!userID.equals("admin") && userMapper.selectByUserID(userID) == null) {//用户名不能为admin
+            userMapper.insert(new User(userID, password, tele, email));
+        }
         return "redirect:http://localhost:8080/usercontroller";
     }
 

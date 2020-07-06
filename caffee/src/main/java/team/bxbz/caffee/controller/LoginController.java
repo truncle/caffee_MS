@@ -1,7 +1,5 @@
 package team.bxbz.caffee.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +14,6 @@ import java.util.Map;
 
 @Controller
 public class LoginController {
-    private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserMapper userMapper;
@@ -30,18 +27,17 @@ public class LoginController {
         return "register";
     }
 
-
     @GetMapping(path = "/register")
     public String addNewUser(@RequestParam String userID, @RequestParam String password,
                              @RequestParam String tele, @RequestParam String email,
                              Map<String, Object> map) {
         if (userMapper.selectByUserID(userID) != null) {
             map.put("msg1", "该用户已存在");//提示信息，该用户已存在
+            return "register";
         } else {
             userMapper.insert(new User(userID, password, tele, email));
-            map.put("msg2", "注册成功");//提示信息，注册成功
+            return "redirect:http://localhost:8080";
         }
-        return "register";//返回register.html
     }
 
     //登录界面可以登录用户和管理员，其中只有管理员的用户名为admin(管理员为内置且唯一)
