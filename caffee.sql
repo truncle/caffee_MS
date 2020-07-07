@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `administrator`;
 CREATE TABLE `administrator` (
-  `ad_ID` int NOT NULL,
+  `ad_ID` varchar(255) NOT NULL,
   `ad_password` varchar(255) NOT NULL,
   `ad_tele` varchar(255) DEFAULT NULL,
   `ad_email` varchar(255) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `food` (
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `order_ID` int NOT NULL,
-  `user_ID` int NOT NULL,
+  `user_ID` varchar(255) NOT NULL,
   `food_name` varchar(255) NOT NULL,
   `food_price` decimal(10,2) NOT NULL,
   `food_amount` varchar(255) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE `order` (
 DROP TABLE IF EXISTS `shopping_cart`;
 CREATE TABLE `shopping_cart` (
   `cart_ID` int NOT NULL,
-  `user_ID` int NOT NULL,
+  `user_ID` varchar(255) NOT NULL,
   `food_name` varchar(255) NOT NULL,
   `food_amount` int NOT NULL,
   `food_price` decimal(10,2) NOT NULL,
