@@ -11,11 +11,10 @@
 </script>
 <h2>> 菜单与菜品管理</h2>
 <div th:width="300px" th:height="50px">
-    查询的餐点类型：<br>
-    <input th:width="300px" th:height="50px" id="tv" th:value="${keyValue}">
+    请输入查询条件：<br><br>
+    <input th:width="300px" th:height="50px" id="tv" placeholder="请输入餐点类型" th:value="${keyValue}">
     <button id="btn" onclick="tvClick()">查询</button>
 </div>
-<br>
 <body>
 <table border="1" width="1000">
     <thead>

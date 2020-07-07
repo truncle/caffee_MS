@@ -10,6 +10,7 @@ import team.bxbz.caffee.entity.User;
 import team.bxbz.caffee.mapper.AdminMapper;
 import team.bxbz.caffee.mapper.UserMapper;
 
+import javax.persistence.Entity;
 import java.util.Map;
 
 @Controller
@@ -43,8 +44,8 @@ public class LoginController {
     //登录界面可以登录用户和管理员，其中只有管理员的用户名为admin(管理员为内置且唯一)
     @GetMapping(path = "/login")
     public String login(@RequestParam String userID, @RequestParam String password,
-                        Model model, Map<String, Object> map) {
-        if (!userID.equals("admin")) {
+                        @RequestParam String user_or_admin, Model model, Map<String, Object> map) {
+        if (!user_or_admin.equals("admin")) {
             User a = userMapper.selectByUserID(userID);
             if (a == null) {
                 map.put("msg3", "该用户不存在");//提示信息，该用户不存在

@@ -128,16 +128,20 @@
                             <p style="color: red" th:text="${msg3}" th:if="${not #strings.isEmpty(msg3)}"></p>
                             <p style="color: red" th:text="${msg4}" th:if="${not #strings.isEmpty(msg4)}"></p>
                             <p style="color: red" th:text="${msg5}" th:if="${not #strings.isEmpty(msg5)}"></p>
-                            <input type="text" name="userID" placeholder="用户名"><br>
+                            <input type="text" name="userID" placeholder="用户名">
                         </div>
                         <div class="lgD">
-                            <input type="text" name="password" placeholder="密码"><br>
+                            <input type="text" name="password" placeholder="密码">
                         </div>
-                        <input type="submit" value="登录" style="text-align: center;  width: 300px; height: 50px;">
+                        <input type="radio" name="user_or_admin" checked value="user">用户
+                        <input type="radio" name="user_or_admin" value="admin">管理员
+                        <br>
+                        <br>
+                        <input type="submit" value="登录" style="text-align: center;  width: 300px; height: 50px; font-size: 20px;">
                     </form>
                     <br>
                     <form action="/add" method="GET">
-                        <input type="submit" value="注册" style="text-align: center;  width: 300px; height: 50px;">
+                        <input type="submit" value="注册" style="text-align: center;  width: 300px; height: 50px;; font-size: 20px;">
                     </form>
                 </div>
             </td>
