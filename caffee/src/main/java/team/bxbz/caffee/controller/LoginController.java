@@ -35,7 +35,10 @@ public class LoginController {
         if (userMapper.selectByUserID(userID) != null) {
             map.put("msg1", "该用户已存在");//提示信息，该用户已存在
             return "register";
-        } else {
+        } else if (tele.length() != 11) {//提示信息，电话号码的位数为11位
+            map.put("msg1","请输入正确的电话号码");
+            return "register";
+        } else {//注册成功返回登录界面
             userMapper.insert(new User(userID, password, tele, email));
             return "redirect:http://localhost:8080";
         }

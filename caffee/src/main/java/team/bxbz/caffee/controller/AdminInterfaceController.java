@@ -10,11 +10,13 @@ public class AdminInterfaceController {
         return "admin";
     }
 
+    //跳转到用户控制界面
     @GetMapping("user_management")
     public String user_management() {
         return "redirect:http://localhost:8080/usercontroller";
     }
 
+    //跳转到菜单控制界面
     @GetMapping("food_management")
     public String food_management() {
         return "redirect:http://localhost:8080/foodcontroller";

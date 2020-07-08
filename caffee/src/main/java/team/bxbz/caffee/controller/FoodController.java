@@ -25,12 +25,14 @@ public class FoodController {
         return "listFood";
     }
 
+    //删除指定餐点
     @RequestMapping(path = "deleteFood", method = RequestMethod.GET)
     public String deleteUser(@RequestParam String food_name) {
         foodMapper.deleteByName(food_name);
         return "redirect:http://localhost:8080/foodcontroller";
     }
 
+    //根据餐点类型查询餐点
     @RequestMapping(path = "searchFood", method = RequestMethod.GET)
     public ModelAndView getIndex(@RequestParam("type") String type) {
         ModelAndView av = new ModelAndView("listFood");
@@ -43,6 +45,7 @@ public class FoodController {
         return av;
     }
 
+    //增加餐点
     @GetMapping(path = "addFood")
     public String addNewUser(@RequestParam String food_name, @RequestParam String food_type,
                              @RequestParam Integer food_amount, @RequestParam Double food_price) {
@@ -53,6 +56,7 @@ public class FoodController {
         return "redirect:http://localhost:8080/foodcontroller";
     }
 
+    //修改餐点信息
     @GetMapping(path = "changeFood")
     public String changeUser(@RequestParam String food_name, @RequestParam String food_type,
                              @RequestParam Integer food_amount, @RequestParam Double food_price) {

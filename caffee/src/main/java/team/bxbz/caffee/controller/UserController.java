@@ -28,8 +28,8 @@ public class UserController {
 
     @RequestMapping(path = "deleteUser", method = RequestMethod.GET)
     public String deleteUser(@RequestParam String userID) {
-        userMapper.deleteByUserID(userID);
-        return "redirect:http://localhost:8080/usercontroller";
+            userMapper.deleteByUserID(userID);
+            return "redirect:http://localhost:8080/usercontroller";
     }
 
     @RequestMapping(path = "searchUser", method = RequestMethod.GET)
@@ -46,9 +46,8 @@ public class UserController {
 
     @GetMapping(path = "addUser")
     public String addNewUser(@RequestParam String userID, @RequestParam String password,
-                             @RequestParam String tele, @RequestParam String email,
-                             Map<String, Object> map) {
-        if (!userID.equals("admin") && userMapper.selectByUserID(userID) == null) {//用户名不能为admin
+                             @RequestParam String tele, @RequestParam String email) {
+        if (userMapper.selectByUserID(userID) == null & tele.length() == 11) {//用户名不存在，并且电话号码为正确的11位
             userMapper.insert(new User(userID, password, tele, email));
         }
         return "redirect:http://localhost:8080/usercontroller";
@@ -56,9 +55,8 @@ public class UserController {
 
     @GetMapping(path = "changeUser")
     public String changeUser(@RequestParam String userID, @RequestParam String password,
-                             @RequestParam String tele, @RequestParam String email,
-                             Map<String, Object> map) {
-        if (userMapper.selectByUserID(userID) != null) {
+                             @RequestParam String tele, @RequestParam String email) {
+        if (userMapper.selectByUserID(userID) != null && tele.length() == 11) {//用户名存在并且电话号码为正确的11位
             userMapper.updateByUserID(new User(userID, password, tele, email));
         }
         return "redirect:http://localhost:8080/usercontroller";
