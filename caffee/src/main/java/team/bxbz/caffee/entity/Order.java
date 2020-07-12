@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Order {
-    private String order_id;//订单号
+    private Integer order_id;//订单号 设置为自增主键
     private String user_id;//用户号
     private String food_name;//餐点名称
     private Double food_price;//餐点单价
@@ -15,7 +15,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(String order_id, String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
+    public Order(Integer order_id, String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
         this.order_id = order_id;
         this.user_id = user_id;
         this.food_name = food_name;
@@ -25,7 +25,7 @@ public class Order {
     }
 
     //set方法
-    public void setOrder_id(String order_id) {
+    public void setOrder_id(Integer order_id) {
         this.order_id = order_id;
     }
 
@@ -50,7 +50,7 @@ public class Order {
     }
 
     //get方法
-    public String getOrder_id() {
+    public Integer getOrder_id() {
         return order_id;
     }
 

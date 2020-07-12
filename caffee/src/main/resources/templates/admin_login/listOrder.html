@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<script>
+    function tvClick() {
+        var x = document.getElementById("tv").value;
+        window.location.href = "searchOrder?orderID=" + x;
+    }
+</script>
+<h2>> 订单管理</h2>
+<div th:width="300px" th:height="50px">
+    请输入查询条件：<br><br>
+    <input th:width="300px" th:height="50px" id="tv" placeholder="请输入订单编号" th:value="${keyValue}">
+    <button id="btn" onclick="tvClick()">查询</button>
+</div>
+<body>
+<table border="1" width="950">
+    <thead>
+    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">订单信息显示</caption>
+    <tr>
+        <td>订单编号</td>
+        <td>用户名</td>
+        <td>餐点名称</td>
+        <td>餐点单价</td>
+        <td>餐点数量</td>
+        <td>总价</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${orders}">
+        <td th:text="${item.order_id}"></td>
+        <td th:text="${item.user_id}"></td>
+        <td th:text="${item.food_name}"></td>
+        <td th:text="${item.food_price}"></td>
+        <td th:text="${item.food_amount}"></td>
+        <td th:text="${item.total_price}"></td>
+    </tr>
+</table>
+<br>
+</body>
+</html>
+</html>
