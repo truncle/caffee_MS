@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ShoppingCart {
-    private String cart_id;//购物车号
+    private Integer cart_id;//购物车号,自增主键,100000开始自增
     private String user_id;//用户号
     private String food_name;//餐点名称
     private Integer food_amount;//餐点数量
@@ -15,8 +15,7 @@ public class ShoppingCart {
     public ShoppingCart() {
     }
 
-    public ShoppingCart(String cart_id, String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
-        this.cart_id = cart_id;
+    public ShoppingCart(String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
         this.user_id = user_id;
         this.food_name = food_name;
         this.food_price = food_price;
@@ -25,7 +24,7 @@ public class ShoppingCart {
     }
 
     //set方法
-    public void setCart_id(String cart_id) {
+    public void setCart_id(Integer cart_id) {
         this.cart_id = cart_id;
     }
 
@@ -50,7 +49,7 @@ public class ShoppingCart {
     }
 
     //get方法
-    public String getCart_id() {
+    public Integer getCart_id() {
         return cart_id;
     }
 

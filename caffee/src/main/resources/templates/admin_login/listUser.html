@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="index.css"/>
+<style>
+    table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+</style>
+</head>
+<body>
+<script>
+    function tvClick() {
+        var x = document.getElementById("tv").value;
+        window.location.href = "searchUser?id=" + x;
+    }
+</script>
+<h2>> 用户管理</h2>
+<div th :width="300px" height="50px">
+    请输入查询条件：
+    <br>
+    <br>
+    <input th:width="300px" th:height="5px" id="tv" placeholder=" 请输入用户名">
+    <button id="btn" onclick="tvClick() " style="width: 80; height: 10; text-align: center;">查询</button>
+</div>
+<table border="1" width="950">
+    <thead>
+    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">用户信息显示</caption>
+    <tr>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>电话</td>
+        <td>邮箱</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${users}">
+        <td th:text="${item.userID}"></td>
+        <td th:text="${item.password}"></td>
+        <td th:text="${item.userTele}"></td>
+        <td th:text="${item.userEmail}"></td>
+        <td>
+            <a th:href="@{/deleteUser(userID=${item.userID})}" }>
+                <input type="submit" value="删除"><br>
+            </a>
+        </td>
+    </tr>
+</table>
+<br>
+<form action="/addUser" method="GET">
+    <div>
+        <input type="text" name="userID" placeholder="请输入要增加的用户名">
+        <input type="text" name="password" placeholder="请设置密码">
+        <input type="text" name="tele" placeholder="请输入电话">
+        <input type="text" name="email" placeholder="请输入邮箱">
+        <input type="submit" value="增加">
+    </div>
+</form>
+<br>
+<form action="/changeUser" method="GET">
+    <div>
+        <input type="text" name="userID" placeholder="请输入要修改的用户名">
+        <input type="text" name="password" placeholder="请输入修改后的密码">
+        <input type="text" name="tele" placeholder="请输入修改后的电话">
+        <input type="text" name="email" placeholder="请输入修改后的邮箱">
+        <input type="submit" value="修改">
+    </div>
+</form>
+</body>
+</html>
