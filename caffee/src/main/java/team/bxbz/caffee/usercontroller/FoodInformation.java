@@ -24,23 +24,24 @@ public class FoodInformation {
     @Resource
     ShoppingCartMapper shoppingCartMapper;
 
-    @GetMapping(path = "foodinformation")
+    @RequestMapping(path = "foodinformation",method = RequestMethod.GET)
     public String list(Model model) {
         List<Food> a = foodMapper.selectAll();
         model.addAttribute("foods_information", a);
         return "user_login/foodInformation";
     }
 
+    //加入购物车
     @RequestMapping(path = "add_to_cart", method = RequestMethod.GET)
     public String add_to_cart(@RequestParam String food_name) {
         Food food=foodMapper.selectByName(food_name);
         Double price=food.getPrice();
         shoppingCartMapper.insert(new ShoppingCart(LoginController.loginname,food_name,price,1,1*price));
-        return "redirect:http://localhost:8080/foodinformation";
+        return "redirect:/foodinformation";
     }
 
     //根据餐点类型查询餐点
-    @RequestMapping(path = "searchFood", method = RequestMethod.GET)
+    @RequestMapping(path = "userSearchFoods", method = RequestMethod.GET)
     public ModelAndView getIndex(@RequestParam("type") String type) {
         ModelAndView av = new ModelAndView("user_login/foodInformation");
         if (foodMapper.selectByType(type) != null) {
@@ -48,7 +49,6 @@ public class FoodInformation {
         } else {
             av.addObject("foods_information", null);
         }
-        av.addObject("keyValue", type);
         return av;
     }
 }

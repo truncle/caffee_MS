@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
 </head>
 <script>
-    function tvClick() {
-        var x = document.getElementById("tv").value;
-        window.location.href = "searchFoods?type=" + x;
+    function tvClick1() {
+        window.location.href = "userSearchFoods?type=饮料"
+    }
+    function tvClick2() {
+        window.location.href = "userSearchFoods?type=小吃"
+    }
+    function tvClick3() {
+        window.location.href = "userSearchFoods?type=主食"
     }
 </script>
 <h2>> 菜单</h2>
-<div th:width="300px" th:height="50px">
-    请输入查询条件：<br><br>
-    <input th:width="300px" th:height="50px" id="tv" placeholder="请输入餐点类型" th:value="${keyValue}">
-    <button id="btn" onclick="tvClick()">查询</button>
-</div>
+<button id="btn1" onclick="tvClick1()">饮料</button>
+<button id="btn2" onclick="tvClick2()">小吃</button>
+<button id="btn3" onclick="tvClick3()">主食</button>
 <body>
 <table border="1" width="950">
     <thead>

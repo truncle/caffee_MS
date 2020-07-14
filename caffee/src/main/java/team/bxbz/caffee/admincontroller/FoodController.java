@@ -30,11 +30,11 @@ public class FoodController {
     @RequestMapping(path = "deleteFood", method = RequestMethod.GET)
     public String deleteUser(@RequestParam String food_name) {
         foodMapper.deleteByName(food_name);
-        return "redirect:http://localhost:8080/foodcontroller";
+        return "redirect:/foodcontroller";
     }
 
     //根据餐点类型查询餐点
-    @RequestMapping(path = "searchFoods", method = RequestMethod.GET)
+    @RequestMapping(path = "adminSearchFoods", method = RequestMethod.GET)
     public ModelAndView getIndex(@RequestParam("type") String type) {
         ModelAndView av = new ModelAndView("admin_login/listFood");
         if (foodMapper.selectByType(type) != null) {
@@ -42,7 +42,6 @@ public class FoodController {
         } else {
             av.addObject("foods", null);
         }
-        av.addObject("keyValue", type);
         return av;
     }
 
@@ -54,7 +53,7 @@ public class FoodController {
         } else {
             foodMapper.insert(new Food(food_name, food_type, food_amount, food_price));
         }
-        return "redirect:http://localhost:8080/foodcontroller";
+        return "redirect:/foodcontroller";
     }
 
     //修改餐点信息
@@ -64,6 +63,6 @@ public class FoodController {
         if (foodMapper.selectByName(food_name) != null) {
             foodMapper.updateByName(new Food(food_name, food_type, food_amount, food_price));
         }
-        return "redirect:http://localhost:8080/foodcontroller";
+        return "redirect:/foodcontroller";
     }
 }

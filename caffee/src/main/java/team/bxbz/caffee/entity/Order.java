@@ -2,6 +2,8 @@ package team.bxbz.caffee.entity;
 
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
+
 @Component
 public class Order {
     private Integer order_id;//订单号 设置为自增主键
@@ -10,9 +12,18 @@ public class Order {
     private Double food_price;//餐点单价
     private Integer food_amount;//餐点数量
     private Double total_price;//总价
+    private Timestamp create_time;//时间
 
     //构造方法
     public Order() {
+    }
+
+    public Order(String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
+        this.user_id = user_id;
+        this.food_name = food_name;
+        this.food_price = food_price;
+        this.food_amount = food_amount;
+        this.total_price = total_price;
     }
 
     public Order(Integer order_id, String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
@@ -49,6 +60,8 @@ public class Order {
         this.total_price = total_price;
     }
 
+    public void setCreate_time(Timestamp create_time) { this.create_time = create_time; }
+
     //get方法
     public Integer getOrder_id() {
         return order_id;
@@ -73,6 +86,8 @@ public class Order {
     public double getTotal_price() {
         return total_price;
     }
+
+    public Timestamp getCreate_time() { return create_time; }
 
     //toString
     public String toString() {

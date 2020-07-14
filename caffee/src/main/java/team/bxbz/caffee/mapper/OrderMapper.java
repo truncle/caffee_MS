@@ -17,11 +17,12 @@ public interface OrderMapper {
     Order selectByOrderID(Integer orderID);
 
     //按用户号查询订单
-    Order selectByUserID(String userID);
+    List<Order> selectByUserID(String userID);
 
     //按订单号更新订单
     int updateByOrderID(Order record);
 
     //查询所有
     List<Order> selectAll();
+
 }

@@ -23,6 +23,15 @@ public class ShoppingCart {
         this.total_price = total_price;
     }
 
+    public ShoppingCart(Integer cart_id,String user_id, String food_name, Double food_price, int food_amount, Double total_price) {
+        this.cart_id=cart_id;
+        this.user_id = user_id;
+        this.food_name = food_name;
+        this.food_price = food_price;
+        this.food_amount = food_amount;
+        this.total_price = total_price;
+    }
+
     //set方法
     public void setCart_id(Integer cart_id) {
         this.cart_id = cart_id;

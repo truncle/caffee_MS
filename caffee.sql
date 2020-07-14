@@ -37,7 +37,7 @@ CREATE TABLE `administrator` (
 
 LOCK TABLES `administrator` WRITE;
 /*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
-INSERT INTO `administrator` VALUES ('admin','1234567','13763946033','710495718@qq.com');
+INSERT INTO `administrator` VALUES ('admin','12345678','13763946033','710495718@qq.com');
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `food` (
 
 LOCK TABLES `food` WRITE;
 /*!40000 ALTER TABLE `food` DISABLE KEYS */;
-INSERT INTO `food` VALUES ('卡布奇诺','咖啡',1234,12341.00);
+INSERT INTO `food` VALUES ('124','奶茶',1234,1324.00),('卡布奇诺','咖啡',1234,1324.00),('卡布奇诺2','咖啡',1234,1324.00);
 /*!40000 ALTER TABLE `food` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,9 +81,10 @@ CREATE TABLE `orders` (
   `food_price` decimal(10,2) NOT NULL,
   `food_amount` varchar(255) NOT NULL,
   `total_price` decimal(10,2) NOT NULL,
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_ID`),
   UNIQUE KEY `order_ID_UNIQUE` (`order_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=100025 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +111,7 @@ CREATE TABLE `shopping_cart` (
   `food_price` decimal(10,2) NOT NULL,
   `total_price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`cart_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000011 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1000040 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +120,7 @@ CREATE TABLE `shopping_cart` (
 
 LOCK TABLES `shopping_cart` WRITE;
 /*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-INSERT INTO `shopping_cart` VALUES (1000010,'admin','卡布奇诺',1,12341.00,12341.00);
+INSERT INTO `shopping_cart` VALUES (1000036,'110','卡布奇诺',1,1324.00,1324.00);
 /*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +146,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('110','zhan0616','345','710495718@qq.com'),('admin','12345678','23452346232','123412');
+INSERT INTO `user` VALUES ('110','1234567','13763946033','710495718@qq.com'),('admin','12345678','13763946033','710495718@qq.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-12 22:56:00
+-- Dump completed on 2020-07-14 15:29:55

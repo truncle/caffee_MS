@@ -30,7 +30,7 @@ public class UserController {
     @RequestMapping(path = "deleteUser", method = RequestMethod.GET)
     public String deleteUser(@RequestParam String userID) {
             userMapper.deleteByUserID(userID);
-            return "redirect:http://localhost:8080/usercontroller";
+            return "redirect:/usercontroller";
     }
 
     //查询用户
@@ -53,7 +53,7 @@ public class UserController {
         if (userMapper.selectByUserID(userID) == null & tele.length() == 11) {//用户名不存在，并且电话号码为正确的11位
             userMapper.insert(new User(userID, password, tele, email));
         }
-        return "redirect:http://localhost:8080/usercontroller";
+        return "redirect:/usercontroller";
     }
 
     //修改用户信息
@@ -63,6 +63,6 @@ public class UserController {
         if (userMapper.selectByUserID(userID) != null && tele.length() == 11) {//用户名存在并且电话号码为正确的11位
             userMapper.updateByUserID(new User(userID, password, tele, email));
         }
-        return "redirect:http://localhost:8080/usercontroller";
+        return "redirect:/usercontroller";
     }
 }

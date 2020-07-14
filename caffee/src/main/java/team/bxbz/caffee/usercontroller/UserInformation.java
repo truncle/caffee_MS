@@ -30,6 +30,6 @@ public class UserInformation {
         if (tele.length() == 11 && userMapper.selectByUserID(LoginController.loginname) != null) {
             userMapper.updateByUserID(new User(LoginController.loginname, password, tele, email));
         }
-        return "redirect:http://localhost:8080/userinformation";
+        return "redirect:/userinformation";
     }
 }

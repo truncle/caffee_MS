@@ -3,6 +3,8 @@ package team.bxbz.caffee.admincontroller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import team.bxbz.caffee.entity.Administrator;
 import team.bxbz.caffee.login.LoginController;
@@ -16,7 +18,7 @@ public class AdminInformation {
     @Resource
     AdminMapper adminMapper;
 
-    @GetMapping(path = "admincontroller")
+    @RequestMapping(path = "admincontroller",method = RequestMethod.GET)
     public String list(Model model) {
         Administrator a = adminMapper.selectByAdminID(LoginController.loginname);
         model.addAttribute("admin", a);
@@ -30,6 +32,6 @@ public class AdminInformation {
         if (tele.length() == 11 && adminMapper.selectByAdminID(LoginController.loginname) != null) {
             adminMapper.updateByAdminID(new Administrator(LoginController.loginname, password, tele, email));
         }
-        return "redirect:http://localhost:8080/admincontroller";//修改失败
+        return "redirect:/admincontroller";
     }
 }
