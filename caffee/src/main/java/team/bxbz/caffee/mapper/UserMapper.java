@@ -22,4 +22,5 @@ public interface UserMapper {
 
     //查找所有用户
     List<User> selectAll();
+
 }

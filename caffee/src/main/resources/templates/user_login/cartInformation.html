@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
+<h2>> 购物车</h2>
 <body>
-
+<table border="1" width="950">
+    <thead>
+    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">购物车信息显示</caption>
+    <tr>
+        <td>购物车ID</td>
+        <td>餐点名称</td>
+        <td>餐点单价</td>
+        <td>餐点数量</td>
+        <td>餐点总价</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${carts_information}">
+        <td th:text="${item.cart_id}"></td>
+        <td th:text="${item.food_name}"></td>
+        <td th:text="${item.food_price}"></td>
+        <td>
+            <a th:href="@{/delete_amount(cart_id=${item.cart_id})}" }><input type="submit" value="-"></a>
+            <a th:text="${item.food_amount}"></a>
+            <a th:href="@{/add_amount(cart_id=${item.cart_id})}" }><input type="submit" value="+"></a>
+        </td>
+        <td th:text="${item.total_price}"></td>
+        <td>
+            <a th:href="@{/delete_cart(cart_id=${item.cart_id})}" }>
+                <input type="submit" value="删除"><br>
+            </a>
+            <a th:href="@{/add_to_order(cart_id=${item.cart_id})}" }>
+                <input type="submit" value="结算">
+            </a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

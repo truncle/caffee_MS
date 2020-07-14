@@ -26,6 +26,7 @@
         <td>餐点单价</td>
         <td>餐点数量</td>
         <td>总价</td>
+        <td>时间</td>
     </tr>
     </thead>
     <tr th:each="item,eee: ${orders}">
@@ -35,6 +36,7 @@
         <td th:text="${item.food_price}"></td>
         <td th:text="${item.food_amount}"></td>
         <td th:text="${item.total_price}"></td>
+        <td th:text="${item.create_time.toString().substring(0,item.create_time.toString().length()-2)}"></td>
     </tr>
 </table>
 <br>

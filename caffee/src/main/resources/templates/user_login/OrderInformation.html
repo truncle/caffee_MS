@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
-
+<table border="1" width="950">
+    <thead>
+    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">订单信息显示</caption>
+    <tr>
+        <td>订单编号</td>
+        <td>用户名</td>
+        <td>餐点名称</td>
+        <td>餐点单价</td>
+        <td>餐点数量</td>
+        <td>总价</td>
+        <td>时间</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${orders_information}">
+        <td th:text="${item.order_id}"></td>
+        <td th:text="${item.user_id}"></td>
+        <td th:text="${item.food_name}"></td>
+        <td th:text="${item.food_price}"></td>
+        <td th:text="${item.food_amount}"></td>
+        <td th:text="${item.total_price}"></td>
+        <td th:text="${item.create_time.toString().substring(0,item.create_time.toString().length()-2)}"></td>
+    </tr>
+</table>
 </body>
 </html>
