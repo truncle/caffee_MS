@@ -15,7 +15,7 @@ public class OrderInformation {
     @Resource
     OrderMapper orderMapper;
 
-    //获取订单信息
+    //获取订单信息，用户只能获得自身的用户信息
     @GetMapping(path = "orderinformation")
     public String list(Model model) {
         List<Order> a = orderMapper.selectByUserID(LoginController.loginname);

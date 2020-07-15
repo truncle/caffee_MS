@@ -78,13 +78,5 @@ public class ShoppingCart {
         return food_price;
     }
 
-    public double getTotal_price() {
-        return total_price;
-    }
-
-    //toString
-    public String toString() {
-        return "cart_id:" + cart_id + "\nuser_id:" + user_id + "\nfood_name:" + food_name + "\nfood_amount:" +
-                food_amount + "\nfood_price:" + food_price + "\ntotal_price:" + total_price;
-    }
+    public double getTotal_price() { return total_price; }
 }

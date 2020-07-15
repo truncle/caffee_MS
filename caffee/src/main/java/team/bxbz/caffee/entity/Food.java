@@ -8,6 +8,7 @@ public class Food {
     private String type;//餐点类型
     private Integer amount;//库存数量
     private Double price;//餐点单价
+    private String picture;//文件路径
 
     //构造函数
     public Food() {
@@ -18,6 +19,14 @@ public class Food {
         this.type = type;
         this.amount = amount;
         this.price = price;
+    }
+
+    public Food(String name, String type, int amount, double price, String picture) {
+        this.name = name;
+        this.type = type;
+        this.amount = amount;
+        this.price = price;
+        this.picture = picture;
     }
 
     //get方法
@@ -37,6 +46,10 @@ public class Food {
         return price;
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
     //set方法
     public void setName(String name) {
         this.name = name;
@@ -54,8 +67,7 @@ public class Food {
         this.type = type;
     }
 
-    //toString
-    public String toString() {
-        return "name:" + name + "\namount:" + amount + "\nprice:" + price + "\ntype:" + type;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

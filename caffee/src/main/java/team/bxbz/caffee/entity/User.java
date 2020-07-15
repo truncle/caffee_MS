@@ -26,22 +26,16 @@ public class User {
         return userID;
     }
 
-    public String getUserTele() {
-        return userTele;
-    }
+    public String getUserTele() { return userTele; }
 
     public String getPassword() {
         return password;
     }
 
-    public String getUserEmail() {
-        return userEmail;
-    }
+    public String getUserEmail() { return userEmail; }
 
     //set方法
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
+    public void setUserID(String userID) { this.userID = userID; }
 
     public void setPassword(String password) {
         this.password = password;
@@ -53,10 +47,5 @@ public class User {
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
-    }
-
-    //toString
-    public String toString() {
-        return "ID:" + userID + "\npassword:" + password + "\ntelephone:" + userTele + "\nemail:" + userEmail;
     }
 }

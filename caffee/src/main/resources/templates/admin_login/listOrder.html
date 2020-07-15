@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
 </head>
 <script>
-    function tvClick() {
-        var x = document.getElementById("tv").value;
-        window.location.href = "searchOrder?orderID=" + x;
+    function tvClick1() {
+        var x = document.getElementById("tv1").value;
+        window.location.href = "searchOrderByOrderID?orderID=" + x;
+    }
+    function tvClick2() {
+        var x = document.getElementById("tv2").value;
+        window.location.href = "searchOrderByUserID?userID=" + x;
     }
 </script>
 <h2>> 订单管理</h2>
 <div th:width="300px" th:height="50px">
     请输入查询条件：<br><br>
-    <input th:width="300px" th:height="50px" id="tv" placeholder="请输入订单编号" th:value="${keyValue}">
-    <button id="btn" onclick="tvClick()">查询</button>
+    <input th:width="300px" th:height="50px" id="tv1" placeholder="请输入订单编号" th:value="${keyValue1}">
+    <button id="btn1" onclick="tvClick1()">查询</button>
+    <input th:width="300px" th:height="50px" id="tv2" placeholder="请输入用户名" th:value="${keyValue2}">
+    <button id="btn2" onclick="tvClick2()">查询</button>
 </div>
 <body>
 <table border="1" width="950">

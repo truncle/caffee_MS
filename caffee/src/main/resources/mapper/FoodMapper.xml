@@ -6,15 +6,17 @@
         <result column="type" property="type" jdbcType="VARCHAR"/>
         <result column="amount" property="amount" jdbcType="INTEGER"/>
         <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="picture" property="picture" jdbcType="VARCHAR"/>
     </resultMap>
     <delete id="deleteByName" parameterType="java.lang.String">
     delete from food
     where name = #{name,jdbcType=VARCHAR}
     </delete>
     <insert id="insert" parameterType="team.bxbz.caffee.entity.Food">
-    insert into food (name, type, amount, price)
+    insert into food (name, type, amount, price, picture)
     values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR},
-      #{amount,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL})
+      #{amount,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL},
+      #{picture,jdbcType=VARCHAR})
     </insert>
     <update id="updateByName" parameterType="team.bxbz.caffee.entity.Food">
     update food
@@ -30,7 +32,7 @@
     where name = #{name,jdbcType=VARCHAR}
     </select>
     <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.String">
-    select name, type, amount, price
+    select name, type, amount, price, picture
     from food
     where type = #{type ,jdbcType=VARCHAR}
     </select>
