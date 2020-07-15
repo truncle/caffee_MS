@@ -88,10 +88,4 @@ public class Order {
     }
 
     public Timestamp getCreate_time() { return create_time; }
-
-    //toString
-    public String toString() {
-        return "order_id:" + order_id + "\nuser_id:" + user_id + "\nfood_name:" + food_name + "\nfood_amount:" +
-                food_amount + "\nfood_price:" + food_price + "\ntotal_price:" + total_price;
-    }
 }

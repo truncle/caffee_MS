@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<h2>> 欢迎度分析</h2>
+<body>
+<table border="1" width="950">
+    <thead>
+    <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">欢迎度分析</caption>
+    <tr>
+        <td>餐点名称</td>
+        <td>销售数量</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${sold}">
+        <td th:text="${item.food_name}"></td>
+        <td th:text="${item.sold_amount}"></td>
+    </tr>
+</table>
+<br>
+</body>
+</html>
+</html>

@@ -53,9 +53,4 @@ public class Administrator {
     public void setAd_email(String ad_email) {
         this.ad_email = ad_email;
     }
-
-    //toString
-    public String toString() {
-        return "ID:" + ad_ID + "\npassword:" + ad_password + "\ntelephone:" + ad_tele + "\nemail:" + ad_email;
-    }
 }

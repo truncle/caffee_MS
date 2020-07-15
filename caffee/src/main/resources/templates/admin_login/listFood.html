@@ -7,9 +7,11 @@
     function tvClick1() {
         window.location.href = "adminSearchFoods?type=饮料"
     }
+
     function tvClick2() {
         window.location.href = "adminSearchFoods?type=小吃"
     }
+
     function tvClick3() {
         window.location.href = "adminSearchFoods?type=主食"
     }
@@ -23,6 +25,7 @@
     <thead>
     <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">菜单信息显示</caption>
     <tr>
+        <td>餐点图片</td>
         <td>餐点名称</td>
         <td>餐点类型</td>
         <td>库存</td>
@@ -31,6 +34,7 @@
     </tr>
     </thead>
     <tr th:each="item,eee: ${foods}">
+        <td><img th:src="@{'images/'+${item.picture}}" width="200th" height="200th"></td>
         <td th:text="${item.name}"></td>
         <td th:text="${item.type}"></td>
         <td th:text="${item.amount}"></td>
@@ -41,8 +45,14 @@
 <br>
 <form action="/addFood" method="GET">
     <div>
+        <input type="text" name="picture" placeholder="请输入图片名字">
         <input type="text" name="food_name" placeholder="请输入要增加的餐点名称">
-        <input type="text" name="food_type" placeholder="请设置餐点类型">
+        <input type="text" name="food_type" list="typelist" placeholder="请设置餐点类型">
+        <datalist id="typelist">
+            <option>饮料</option>
+            <option>小吃</option>
+            <option>主食</option>
+        </datalist>
         <input type="text" name="food_amount" placeholder="请输入库存数量">
         <input type="text" name="food_price" placeholder="请输入餐点价格">
         <input type="submit" value="增加">
@@ -51,8 +61,9 @@
 <br>
 <form action="/changeFood" method="GET">
     <div>
+        <input type="text" name="picture" placeholder="请输入图片名字">
         <input type="text" name="food_name" placeholder="请输入要修改的餐点名称">
-        <input type="text" name="food_type" placeholder="请修改后餐点类型">
+        <input type="text" name="food_type" list="typelist" placeholder="请设置餐点类型">
         <input type="text" name="food_amount" placeholder="请输入修改后库存数量">
         <input type="text" name="food_price" placeholder="请输入修改后餐点价格">
         <input type="submit" value="修改"><br>
@@ -61,3 +72,11 @@
 </body>
 </html>
 </html>
+
+
+
+
+
+
+
+

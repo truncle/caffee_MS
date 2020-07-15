@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import team.bxbz.caffee.entity.Food;
+import team.bxbz.caffee.entity.Sold;
 import team.bxbz.caffee.mapper.FoodMapper;
+import team.bxbz.caffee.mapper.SoldMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,6 +20,9 @@ import java.util.List;
 public class FoodController {
     @Resource
     FoodMapper foodMapper;
+
+    @Resource
+    SoldMapper soldMapper;
 
     @GetMapping(path = "foodcontroller")
     public String list(Model model) {
@@ -45,23 +50,26 @@ public class FoodController {
         return av;
     }
 
-    //增加餐点
+    //增加餐点信息，注意：图片必须放置于caffee/src/main/resources/images下面，用户输入图片的时候只需输入图片名字即可
     @GetMapping(path = "addFood")
     public String addNewUser(@RequestParam String food_name, @RequestParam String food_type,
-                             @RequestParam Integer food_amount, @RequestParam Double food_price) {
+                             @RequestParam Integer food_amount, @RequestParam Double food_price,
+                             @RequestParam String picture) {
         if (foodMapper.selectByName(food_name) != null) {
         } else {
-            foodMapper.insert(new Food(food_name, food_type, food_amount, food_price));
+            foodMapper.insert(new Food(food_name, food_type, food_amount, food_price,picture));
+            soldMapper.insert(new Sold(food_name,0));
         }
         return "redirect:/foodcontroller";
     }
 
-    //修改餐点信息
+    //修改餐点信息，注意：图片必须放置于caffee/src/main/resources/images下面，用户输入图片的时候只需输入图片名字即可
     @GetMapping(path = "changeFood")
     public String changeUser(@RequestParam String food_name, @RequestParam String food_type,
-                             @RequestParam Integer food_amount, @RequestParam Double food_price) {
+                             @RequestParam Integer food_amount, @RequestParam Double food_price,
+                             @RequestParam String picture) {
         if (foodMapper.selectByName(food_name) != null) {
-            foodMapper.updateByName(new Food(food_name, food_type, food_amount, food_price));
+            foodMapper.updateByName(new Food(food_name, food_type, food_amount, food_price,picture));
         }
         return "redirect:/foodcontroller";
     }

@@ -53,6 +53,7 @@ CREATE TABLE `food` (
   `type` varchar(255) NOT NULL,
   `amount` int NOT NULL,
   `price` decimal(10,2) NOT NULL,
+  `picture` varchar(255) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -63,7 +64,6 @@ CREATE TABLE `food` (
 
 LOCK TABLES `food` WRITE;
 /*!40000 ALTER TABLE `food` DISABLE KEYS */;
-INSERT INTO `food` VALUES ('124','奶茶',1234,1324.00),('卡布奇诺','咖啡',1234,1324.00),('卡布奇诺2','咖啡',1234,1324.00);
 /*!40000 ALTER TABLE `food` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,7 @@ CREATE TABLE `orders` (
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_ID`),
   UNIQUE KEY `order_ID_UNIQUE` (`order_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=100025 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `shopping_cart` (
   `food_price` decimal(10,2) NOT NULL,
   `total_price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`cart_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000040 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1000000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,8 +120,30 @@ CREATE TABLE `shopping_cart` (
 
 LOCK TABLES `shopping_cart` WRITE;
 /*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-INSERT INTO `shopping_cart` VALUES (1000036,'110','卡布奇诺',1,1324.00,1324.00);
 /*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sold`
+--
+
+DROP TABLE IF EXISTS `sold`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sold` (
+  `food_name` varchar(255) NOT NULL,
+  `sold_amount` int NOT NULL,
+  PRIMARY KEY (`food_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sold`
+--
+
+LOCK TABLES `sold` WRITE;
+/*!40000 ALTER TABLE `sold` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sold` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -159,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-14 15:29:55
+-- Dump completed on 2020-07-15 18:27:05

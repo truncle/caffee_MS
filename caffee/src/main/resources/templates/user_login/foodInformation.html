@@ -23,6 +23,7 @@
     <thead>
     <caption style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;">菜单信息显示</caption>
     <tr>
+        <td>餐点图片</td>
         <td>餐点名称</td>
         <td>餐点类型</td>
         <td>库存</td>
@@ -31,6 +32,7 @@
     </tr>
     </thead>
     <tr th:each="item,eee: ${foods_information}">
+        <td><img th:src="@{'images/'+${item.picture}}" width="200th" height="200th"></td>
         <td th:text="${item.name}"></td>
         <td th:text="${item.type}"></td>
         <td th:text="${item.amount}"></td>

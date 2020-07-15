@@ -27,15 +27,28 @@ public class OrderController {
     }
 
     //根据订单号查询订单
-    @RequestMapping(path = "searchOrder", method = RequestMethod.GET)
-    public ModelAndView getIndex(@RequestParam("orderID") Integer orderID) {
+    @RequestMapping(path = "searchOrderByOrderID", method = RequestMethod.GET)
+    public ModelAndView getIndex1(@RequestParam("orderID") Integer orderID) {
         ModelAndView av = new ModelAndView("admin_login/listOrder");
         if (orderMapper.selectByOrderID(orderID) != null) {
             av.addObject("orders", orderMapper.selectByOrderID(orderID));
         } else {
             av.addObject("orders", null);
         }
-        av.addObject("keyValue", orderID);
+        av.addObject("keyValue1", orderID);
+        return av;
+    }
+
+    //根据用户名查询订单
+    @RequestMapping(path = "searchOrderByUserID", method = RequestMethod.GET)
+    public ModelAndView getIndex2(@RequestParam("userID") String userID) {
+        ModelAndView av = new ModelAndView("admin_login/listOrder");
+        if (orderMapper.selectByUserID(userID) != null) {
+            av.addObject("orders", orderMapper.selectByUserID(userID));
+        } else {
+            av.addObject("orders", null);
+        }
+        av.addObject("keyValue2", userID);
         return av;
     }
 }
